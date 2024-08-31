@@ -258,4 +258,4 @@ let studentInfo = [
 
 studentInfo.forEach( (student, index) => {
     console.log(`SrNo: ${index+1} | Name of Student: ${student.name}, Marks: ${student.marks}, Class: ${student.class}, Address: ${student.address}`);
-})
+}) 
