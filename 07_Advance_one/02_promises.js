@@ -114,5 +114,4 @@ fetch('https://api.github.com/users/Cruziour')
 })
 .catch((error)=>{
     console.log(error);
-    
 })
