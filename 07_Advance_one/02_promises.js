@@ -104,9 +104,13 @@ consumePromiseFive()
 // }
 
 // getAllUser()
-
-fetch('https://api.github.com/users/Cruziour')
+const ownObject = {
+    username: "Rupesh"
+}
+fetch('https://api.github.com/users/Cruziour',ownObject)
 .then((response)=>{
+    console.log(ownObject.username);
+    
     return response.json()
 })
 .then((data)=>{
