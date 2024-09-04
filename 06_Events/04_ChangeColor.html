@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+    <style>
+        body {
+            background-color: #414141;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Change Color</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    function randomColor() {
+        const hex = "0123456789ABCDEF"
+        let color = "#"
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color
+    }
+
+    // console.log(randomColor());
+
+
+    document.getElementById('start').addEventListener('click', startChangingColor, false)
+    document.getElementById('stop').addEventListener('click', stopChangingColor, false)
+
+    let changeColor
+    function startChangingColor() {
+        if(!changeColor){
+            changeColor = setInterval(changeBgColor, 2000)
+        }
+        function changeBgColor() {
+            document.body.style.backgroundColor = randomColor();
+        }
+    }
+
+    function stopChangingColor() {
+        clearInterval(changeColor)
+        changeColor = null
+    }
+
+</script>
+
+</html>
